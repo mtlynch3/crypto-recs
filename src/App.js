@@ -3,11 +3,11 @@ import Offers from "./components/Offers";
 const container = {
   display: 'flex',
   flexDirection: 'row',
-  height: 400
+  height: 500
 }
 
 const recs = {
-  height: '85%',
+  height: '90%',
   width: '40%',
   backgroundColor: '#fef7ff',
   borderRadius: '20px',
