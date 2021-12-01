@@ -41,7 +41,19 @@ const exchangeView = (buyOrSell) => {
     );
   }
 
-  return rows;
+  return (
+    <table>
+      <tbody>
+        <tr>
+          <th>Exchange</th>
+          <th>Price</th>
+          <th>Amount</th>
+          <th>Value</th>
+        </tr>
+        {rows}
+      </tbody>
+    </table>
+  )
 
 }
 
@@ -49,21 +61,12 @@ const Offers = () => {
   return (
     <div className="offer-container">
       <div className="offer">
-        <div>Best buying offers: </div>
-        <table>
-          <tbody>
-            <tr>
-              <th>Exchange</th>
-              <th>Price</th>
-              <th>Amount</th>
-              <th>Value</th>
-            </tr>
-            {exchangeView("buy")}
-          </tbody>
-        </table>
+        <div>Best buying offers:</div>
+        {exchangeView("buy")}
       </div>
       <div className="offer">
-        Best selling offers:
+        <div>Best selling offers:</div>
+        {exchangeView("sell")}
       </div>
     </div>
   );
