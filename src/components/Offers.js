@@ -3,31 +3,40 @@ import './styles/Offers.css';
 let data = {
   coinbase: {
     buyPrice: 5.0,
-    sellPrice: 5.0,
+    sellPrice: 10.0,
     buySize: 0.5,
     sellSize: 0.5,
   },
   bitstamp: {
-    buyPrice: 10.0,
+    buyPrice: 5.0,
     sellPrice: 10.0,
     buySize: 0.5,
     sellSize: 0.5,
   }
 }
 
-const exchangeView = () => {
+const exchangeView = (buyOrSell) => {
   let exchanges = Object.keys(data);
   let rows = [];
 
   for(let i = 0; i < exchanges.length; i++) {
+    
     let name = exchanges[i];
-    let { buyPrice, buySize } = data[name];
+    let { buyPrice, buySize, sellPrice, sellSize } = data[name];
+    let price, size = 0;
+    if(buyOrSell === "buy") {
+      price = buyPrice;
+      size = buySize;
+    } else {
+      price = sellPrice;
+      size = sellSize;
+    }
     rows.push(
       <tr key={i}>
         <td>{name}</td>
-        <td>{buyPrice}</td>
-        <td>{buySize}</td>
-        <td>{buyPrice * buySize}</td>
+        <td>{price}</td>
+        <td>{size}</td>
+        <td>{price * size}</td>
       </tr>
     );
   }
@@ -49,7 +58,7 @@ const Offers = () => {
               <th>Amount</th>
               <th>Value</th>
             </tr>
-            {exchangeView()}
+            {exchangeView("buy")}
           </tbody>
         </table>
       </div>
