@@ -1,17 +1,4 @@
-
-const offersContainer = {
-  width: '60%',
-}
-
-const offers = {
-  height: '40%',
-  backgroundColor: '#fef7ff',
-  borderRadius: '20px',
-  border: '3px solid pink',
-  margin: '10px',
-  padding: '10px'
-}
-
+import './styles/Offers.css';
 
 let data = {
   coinbase: {
@@ -26,11 +13,9 @@ let data = {
     buySize: 0.5,
     sellSize: 0.5,
   }
-
 }
 
 const exchangeView = () => {
-  
   let exchanges = Object.keys(data);
   let rows = [];
 
@@ -53,8 +38,8 @@ const exchangeView = () => {
 
 const Offers = () => {
   return (
-    <div style={offersContainer}>
-      <div style={offers}>
+    <div className="offer-container">
+      <div className="offer">
         <div>Best buying offers: </div>
         <table>
           <tbody>
@@ -68,7 +53,7 @@ const Offers = () => {
           </tbody>
         </table>
       </div>
-      <div style={offers}>
+      <div className="offer">
         Best selling offers:
       </div>
     </div>
