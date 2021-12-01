@@ -1,24 +1,13 @@
+import Offers from "./components/Offers";
+
 const container = {
   display: 'flex',
   flexDirection: 'row',
-  height: 400
-}
-
-const offersContainer = {
-  width: '60%',
-}
-
-const offers = {
-  height: '30%',
-  backgroundColor: '#fef7ff',
-  borderRadius: '20px',
-  border: '3px solid pink',
-  margin: '10px',
-  padding: '10px'
+  height: 500
 }
 
 const recs = {
-  height: '85%',
+  height: '90%',
   width: '40%',
   backgroundColor: '#fef7ff',
   borderRadius: '20px',
@@ -31,11 +20,8 @@ function App() {
   return (
     <div>
       <h1>Crypto Recs</h1>
-      <div style={container}> 
-        <div style={offersContainer}>
-          <div style={offers}>Best buying offer:</div>
-          <div style={offers}>Best selling offer:</div>
-        </div>
+      <div style={container}>
+        <Offers /> 
         <div style={recs}>Recommendations</div>
       </div>
     </div>
